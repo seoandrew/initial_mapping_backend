@@ -2,6 +2,8 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const bodyParser = require('body-parser');
+require('dotenv').config();
+
 
 const app = express();
 const port = process.env.PORT || 4000;
@@ -10,7 +12,7 @@ app.use(cors());
 app.use(bodyParser.json());
 
 // Replace with your MongoDB Atlas connection string
-const uri = 'mongodb+srv://andrewseo:TERIseo135*@cluster0.rqqfiqc.mongodb.net/initialGraphAttemptData?retryWrites=true&w=majority';
+const uri = process.env.MONGO_URI;
 
 
 
